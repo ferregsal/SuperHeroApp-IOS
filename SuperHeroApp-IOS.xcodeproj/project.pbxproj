@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		6C899ADC2C87119700FA6D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C899ADB2C87119700FA6D9E /* AppDelegate.swift */; };
 		6C899ADE2C87119700FA6D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C899ADD2C87119700FA6D9E /* SceneDelegate.swift */; };
-		6C899AE02C87119700FA6D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C899ADF2C87119700FA6D9E /* ViewController.swift */; };
 		6C899AE32C87119700FA6D9E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6C899AE22C87119700FA6D9E /* Base */; };
 		6C899AE52C87119800FA6D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C899AE42C87119800FA6D9E /* Assets.xcassets */; };
 		6C899AE82C87119800FA6D9E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6C899AE72C87119800FA6D9E /* Base */; };
+		6CEC1CFA2C872CB900CE2993 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC1CF92C872CB900CE2993 /* CollectionViewCell.swift */; };
+		6CEC1CFC2C872CD300CE2993 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC1CFB2C872CD300CE2993 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6C899AD82C87119700FA6D9E /* SuperHeroApp-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SuperHeroApp-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C899ADB2C87119700FA6D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C899ADD2C87119700FA6D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6C899ADF2C87119700FA6D9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C899AE22C87119700FA6D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C899AE42C87119800FA6D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C899AE72C87119800FA6D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C899AE92C87119800FA6D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CEC1CF92C872CB900CE2993 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6CEC1CFB2C872CD300CE2993 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		6C899ADA2C87119700FA6D9E /* SuperHeroApp-IOS */ = {
 			isa = PBXGroup;
 			children = (
-				6C899ADB2C87119700FA6D9E /* AppDelegate.swift */,
+				6CEC1CF52C872A0500CE2993 /* ViewCells */,
+				6CEC1CF42C8729FE00CE2993 /* Data */,
+				6CEC1CF32C8729F100CE2993 /* ViewControllers */,
+				6CEC1CF62C872A1600CE2993 /* Views */,
 				6C899ADD2C87119700FA6D9E /* SceneDelegate.swift */,
-				6C899ADF2C87119700FA6D9E /* ViewController.swift */,
-				6C899AE12C87119700FA6D9E /* Main.storyboard */,
+				6C899ADB2C87119700FA6D9E /* AppDelegate.swift */,
 				6C899AE42C87119800FA6D9E /* Assets.xcassets */,
-				6C899AE62C87119800FA6D9E /* LaunchScreen.storyboard */,
 				6C899AE92C87119800FA6D9E /* Info.plist */,
 			);
 			path = "SuperHeroApp-IOS";
+			sourceTree = "<group>";
+		};
+		6CEC1CF32C8729F100CE2993 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CEC1CFB2C872CD300CE2993 /* CollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6CEC1CF42C8729FE00CE2993 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6CEC1CF52C872A0500CE2993 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				6CEC1CF92C872CB900CE2993 /* CollectionViewCell.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		6CEC1CF62C872A1600CE2993 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6C899AE12C87119700FA6D9E /* Main.storyboard */,
+				6C899AE62C87119800FA6D9E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C899AE02C87119700FA6D9E /* ViewController.swift in Sources */,
+				6CEC1CFC2C872CD300CE2993 /* CollectionViewController.swift in Sources */,
 				6C899ADC2C87119700FA6D9E /* AppDelegate.swift in Sources */,
+				6CEC1CFA2C872CB900CE2993 /* CollectionViewCell.swift in Sources */,
 				6C899ADE2C87119700FA6D9E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
