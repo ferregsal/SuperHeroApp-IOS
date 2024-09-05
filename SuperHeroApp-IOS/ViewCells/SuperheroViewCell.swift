@@ -13,11 +13,19 @@ class SuperheroViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBOutlet weak var superheroImageView: UIImageView!
+    
+    @IBOutlet weak var superheroLabel: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+       
     }
-
+    func render(superhero: Superhero) {
+        superheroLabel.text = superhero.name
+        superheroImageView.loadFrom(url: superhero.image.url)
+    }
+    
 }

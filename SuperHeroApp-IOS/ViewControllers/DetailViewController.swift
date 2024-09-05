@@ -9,11 +9,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var avatarImageView: UIImageView!
+    var superhero: Superhero? = nil
 
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet weak var nameTextView: UILabel!
+    
+    override func viewDidLoad() {
+           super.viewDidLoad()
+        
+        nameTextView.layer.cornerRadius = 12
+        nameTextView.layer.masksToBounds = true
+        
+        avatarImageView.layer.cornerRadius = 12
+        avatarImageView.layer.masksToBounds = true
+
+           // Do any additional setup after loading the view.
+           if let superhero = superhero {
+               self.navigationItem.title = superhero.name
+               nameTextView.text = superhero.name
+               avatarImageView.loadFrom(url: superhero.image.url)
+           }
+       }
+       
     
 
     /*

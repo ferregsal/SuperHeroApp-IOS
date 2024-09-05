@@ -14,6 +14,9 @@ class SuperheroProvider {
             print("URL not valid")
             return
         }
+        if name != "" {
+            
+        
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -26,7 +29,9 @@ class SuperheroProvider {
                 withResult(result.results)
             }
         }
+            
         task.resume()
+        }
     }
     
 }

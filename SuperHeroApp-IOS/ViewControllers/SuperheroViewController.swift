@@ -7,15 +7,52 @@
 
 import UIKit
 
-class SuperheroViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class SuperheroViewController: UIViewController, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return superheroList.count
     }
     
-    @IBOutlet weak var SuperheroTableView: UITableView!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SuperheroViewCell
+               
+               let superhero = superheroList[indexPath.row]
+               
+               cell.render(superhero: superhero)
+               
+               return cell
+    }
+    
+    @IBOutlet weak var superheroSearchBar: UISearchBar!
+    
+    @IBOutlet weak var superheroTableView: UITableView!
+    
+    var superheroList: [Superhero] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        superheroSearchBar.text=""
+        superheroTableView.dataSource = self
+                
+        SuperheroProvider.findSuperheroesByName(superheroSearchBar.text!, withResult: { [unowned self /* weak self  */] results in
+                    self.superheroList = results
+                    DispatchQueue.main.async {
+                        self.superheroTableView.reloadData()
+                    }
+                })
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if (segue.identifier == "showDetail") {
+              let viewController = segue.destination as! DetailViewController
+              
+              let indexPath = superheroTableView.indexPathForSelectedRow!
+              
+              viewController.superhero = superheroList[indexPath.row]
+              
+              superheroTableView.deselectRow(at: indexPath, animated: false)
+          }
+      }
+   
     
     /*
     // MARK: - Navigation
@@ -28,3 +65,4 @@ class SuperheroViewController: UIViewController {
     */
 
 }
+
