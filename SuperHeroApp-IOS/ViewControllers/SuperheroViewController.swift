@@ -30,7 +30,7 @@ class SuperheroViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        superheroSearchBar.text=""
+        superheroSearchBar.text="super"
         superheroTableView.dataSource = self
                 
         SuperheroProvider.findSuperheroesByName(superheroSearchBar.text!, withResult: { [unowned self /* weak self  */] results in

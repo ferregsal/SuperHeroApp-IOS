@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     var superhero: Superhero? = nil
 
