@@ -13,21 +13,46 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     var superhero: Superhero? = nil
 
-    @IBOutlet weak var nameTextView: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var realNameLabel: UILabel!
+    
+    @IBOutlet weak var publisherLabel: UILabel!
+    
+    @IBOutlet weak var placeOfBirthLabel: UILabel!
+    
+    @IBOutlet weak var alignmentLabel: UILabel!
+    
+    @IBOutlet weak var biographyStackView: UIStackView!
+    
     
     override func viewDidLoad() {
            super.viewDidLoad()
         
-        nameTextView.layer.cornerRadius = 12
-        nameTextView.layer.masksToBounds = true
+        nameLabel.layer.cornerRadius = 12
+        nameLabel.layer.masksToBounds = true
         
         avatarImageView.layer.cornerRadius = 12
         avatarImageView.layer.masksToBounds = true
+        
+        biographyStackView.layer.cornerRadius = 12
+        biographyStackView.layer.masksToBounds = true
 
            // Do any additional setup after loading the view.
            if let superhero = superhero {
                self.navigationItem.title = superhero.name
-               nameTextView.text = superhero.name
+               nameLabel.text = superhero.name
+               realNameLabel.text = superhero.biography.realName
+               publisherLabel.text = superhero.biography.publisher
+               placeOfBirthLabel.text = superhero.biography.placeOfBirth
+               alignmentLabel.text = superhero.biography.alignment.capitalized
+               if superhero.biography.alignment.capitalized == "Good" {
+                   alignmentLabel.textColor = UIColor.systemGreen
+               }
+               else {
+                   alignmentLabel.textColor = UIColor.systemRed
+               }
+
                avatarImageView.loadFrom(url: superhero.image.url)
            }
        }
